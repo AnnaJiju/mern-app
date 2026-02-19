@@ -1,0 +1,19 @@
+# mern-chart/values.yaml
+
+backend:
+  name: mern-backend
+  repository: annajiju/mern-app-backend
+  tag: "v5"
+  containerPort: 5000
+  servicePort: 5000
+
+frontend:
+  name: mern-frontend
+  repository: annajiju/mern-app-frontend
+  tag: "v7"
+  containerPort: 80
+  servicePort: 80
+
+# Secret name must match what you created with kubectl
+secretName: mern-mongodb-secret
+backendurl: http://mern-backend-service.svc.cluster.local:5000

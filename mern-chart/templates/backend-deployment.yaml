@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.backend.name }}-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.backend.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.backend.name }}
+    spec:
+      containers:
+      - name: backend
+        image: "{{ .Values.backend.repository }}:{{ .Values.backend.tag }}"
+        ports:
+        - containerPort: {{ .Values.backend.containerPort }}
+        env:
+        - name: ATLAS_URI
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secretName }}
+              key: mongo-uri
