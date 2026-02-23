@@ -10,7 +10,7 @@ backend:
 frontend:
   name: mern-frontend
   repository: annajiju/mern-app-frontend
-  tag: "v7"
+  tag: "v13"
   containerPort: 80
   servicePort: 80
 
