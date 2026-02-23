@@ -10,4 +10,3 @@ spec:
     - protocol: TCP
       port: {{ .Values.frontend.servicePort }}
       targetPort: {{ .Values.frontend.containerPort }}
-      nodePort: 30007
